@@ -1,0 +1,74 @@
+
+.App-logo {
+  
+  width: 20%; 
+ 
+}
+
+html,body{
+  background-color: #ffeb0c;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+.App-header {  
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header img{
+  height: 20%;
+}
+
+.buttonLogin {
+  width: 15%;
+  height: 60%;
+  background-color: darkorange;
+  color: aliceblue;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 20px;
+  align-content: block;
+  border: 1px solid #000000;
+  border-radius: 40px;
+  align-items: center;
+  cursor: pointer;  
+  padding: 15px;
+  
+
+
+
+
+}
+
+.TwoButtons{  
+  display: flex; 
+  height: 100%;  
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7%;
+}
+
+#waiter{
+  margin-bottom: 5%;
+ 
+}
+
+
+/* @keyframes App-logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
