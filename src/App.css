@@ -70,6 +70,7 @@ html,body{
 .menuTitle{
   text-align: center;
   font-family: 'Pacifico', cursive;
+  z-index: 1;
   
    
 }
@@ -89,6 +90,7 @@ background: rgba(255, 154, 3, 0.4);
 border-radius: 20px;
 display: flex;
 justify-content: center;
+left: 5%;
 }
 
 .squareOrder{
@@ -96,14 +98,14 @@ justify-content: center;
 float: right;
 width: 348px;
 height: 898px;
-
+margin-right: 5%;
 background: rgba(255, 154, 3, 0.4);
 border-radius: 20px;
 
 
 }
 
-.identifierMenu{
+#identifierBreakfast{
 position: absolute;
 width: 143px;
 height: 40px;
@@ -115,13 +117,302 @@ align-items: center;
 text-align: center;
 display: flex;
 justify-content: center;
+top: 55px;
 
 }
 
-#breakfast {
-  
-  
-  
- 
+.squaresMenu{
+position: absolute;
+width: 120px;
+height: 86px;
+background: #D9D9D9;
+border-radius: 20px;
+display: flex;
+
 
 }
+
+
+#breakfast1{
+
+  left: 10%;
+  top: 15%;
+
+}
+
+#breakfast2{
+
+right: 10%;
+top: 15%;
+
+}
+
+#breakfast3{
+
+top:27%;
+left:10%
+
+}
+
+#breakfast4{
+
+top:27%;
+right:10%
+
+}
+
+
+.menuP{
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 7%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  
+  
+}
+
+#sandwishP{
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 25%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+}
+
+
+
+.menuImg{
+  align-self: center;
+  margin-left: 37%;
+  margin-bottom:30%;
+}
+
+.price{
+  position: absolute;
+  margin-top: 53%;
+  margin-left: 43%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+
+}
+
+#sandWishprice{
+  position: absolute;
+  margin-top: 53%;
+  margin-left: 40%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+
+}
+
+#juiceP{
+
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 17%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+
+}
+
+.identifierBreakfast{
+position: absolute;
+width: 143px;
+height: 40px;
+background: rgba(204, 25, 0, 0.25);
+border-radius: 20px;
+align-self: center;
+font-family: 'Fira Sans', sans-serif;
+align-items: center;
+text-align: center;
+display: flex;
+justify-content: center;
+top: 40px;
+}
+
+#identifierHamburguers{
+
+
+  position: absolute;
+  width: 143px;
+  height: 40px;
+  background: rgba(204, 25, 0, 0.25);
+  border-radius: 20px;
+  align-self: center;
+  font-family: 'Fira Sans', sans-serif;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  top: 36%;
+
+
+}
+
+#hamburguer{
+  left: 10%;
+  top: 44%;
+  
+}
+
+#doubleHamburguer{
+  right: 10%;
+  top: 44%;
+  
+}
+#doubleHamImg{
+  align-self: center;
+  margin-left: 39%;
+  margin-bottom:40%;
+
+}
+
+#hamburguerP{
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 15%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+
+}
+
+#doubleHamP{
+
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 5%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+#hamburguerPrice{
+  position: absolute;
+  margin-top: 55%;
+  margin-left: 40%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+
+
+}
+
+#DoubleHamprice{
+
+  position: absolute;
+  margin-top: 58%;
+  margin-left: 40%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+
+
+}
+
+#identifierAccompaniments{
+  width: 165px;
+  height: 40px;
+  background: rgba(204, 25, 0, 0.25);
+  border-radius: 20px;
+  align-self: center;
+  font-family: 'Fira Sans', sans-serif;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  top: 53%;
+  position: absolute;
+
+}
+
+#potatoesP{
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 19%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
+
+}
+
+#potatoes{
+  left: 10%;
+  top: 61%;
+  
+}
+
+#onion{
+
+  right: 10%;
+  top: 61%;
+  
+}
+
+#identifierDrinks{
+  width: 165px;
+  height: 40px;
+  background: rgba(204, 25, 0, 0.25);
+  border-radius: 20px;
+  align-self: center;
+  font-family: 'Fira Sans', sans-serif;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  bottom: 21%;
+  position: absolute;
+
+}
+
+#water500{
+
+  left: 10%;
+  bottom: 12%;
+
+
+}
+
+#water750{
+
+  right: 10%;
+  bottom: 12%;
+
+
+}
+
+#soda500{
+
+  left: 10%;
+  bottom: 1%;
+
+
+}
+
+#soda750{
+
+  right: 10%;
+  bottom: 1%;
+
+
+}
+
+.waterP{
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 19%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.sodaP{
+  position: absolute;
+  margin-top: 37%;
+  margin-left: 12%;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+
