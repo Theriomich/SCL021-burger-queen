@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Krusty,ButtonsLogin} from './App';
+import { RouterProvider } from 'react-router-dom';
+import {Krusty} from './App';
 import './App.css';
+import routesApp from './routes';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Krusty/>
-    <ButtonsLogin />
-  </React.StrictMode>
+  <>
+<Krusty />
+<RouterProvider router={routesApp} />
+</>
+
 );
 
 

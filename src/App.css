@@ -6,14 +6,9 @@
 }
 
 html,body{
-  background-color: #ffeb0c;
+  background-color:#FFD80A
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .App-header {  
   
@@ -32,8 +27,7 @@ html,body{
 .buttonLogin {
   width: 15%;
   height: 60%;
-  background-color: darkorange;
-  color: aliceblue;
+  background-color: darkorange;  
   font-weight: bold;
   font-family: sans-serif;
   font-size: 20px;
@@ -44,10 +38,11 @@ html,body{
   cursor: pointer;  
   padding: 15px;
   
+}
 
-
-
-
+.linksTo{
+  text-decoration: none;
+  color:white
 }
 
 .TwoButtons{  
@@ -64,11 +59,69 @@ html,body{
 }
 
 
-/* @keyframes App-logo {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.cartTitle{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  
+ 
+  
+}
+
+.menuTitle{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  
+   
+}
+
+.orderTitle{
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+
+}
+
+.squareMenu{
+
+position: absolute;
+width: 348px;
+height: 898px;
+background: rgba(255, 154, 3, 0.4);
+border-radius: 20px;
+display: flex;
+justify-content: center;
+}
+
+.squareOrder{
+
+float: right;
+width: 348px;
+height: 898px;
+
+background: rgba(255, 154, 3, 0.4);
+border-radius: 20px;
+
+
+}
+
+.identifierMenu{
+position: absolute;
+width: 143px;
+height: 40px;
+background: rgba(204, 25, 0, 0.25);
+border-radius: 20px;
+align-self: center;
+font-family: 'Fira Sans', sans-serif;
+align-items: center;
+text-align: center;
+display: flex;
+justify-content: center;
+
+}
+
+#breakfast {
+  
+  
+  
+ 
+
+}
