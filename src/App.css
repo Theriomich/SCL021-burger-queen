@@ -1,8 +1,53 @@
 
-.App-logo {
+#App-logo {
   
   width: 20%; 
+  z-index: 1;
+  
  
+}
+
+#arrow{
+  
+  width: 8%; 
+  height: 8%;
+  margin-left: 40%;  
+  top: 6%;
+  position: absolute; 
+   
+}
+
+#arrow:hover{
+  
+  animation: rotation 1s linear;
+  border-radius:50%;
+-webkit-border-radius:50%;
+box-shadow: 0px 0px 15px 15px #ec731e;
+-webkit-box-shadow: 0px 0px 15px 15px #ec731e;
+;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+#buttonArrow{
+border: none; 
+
+}
+
+#backHome{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+  color: #000000;
+  margin-left: 87%;  
+  position: absolute;
+  top: 12%;
 }
 
 html,body{
@@ -38,6 +83,12 @@ html,body{
   cursor: pointer;  
   padding: 15px;
   
+  
+}
+
+.buttonLogin:hover{
+  background-color: #df6914;
+  
 }
 
 .linksTo{
@@ -53,10 +104,9 @@ html,body{
   margin-top: 7%;
 }
 
-#waiter{
-  margin-bottom: 5%;
- 
-}
+
+/* ----------CART----------- */
+
 
 
 .cartTitle{
@@ -70,9 +120,17 @@ html,body{
 .menuTitle{
   text-align: center;
   font-family: 'Pacifico', cursive;
-  z-index: 1;
+  align-content: center;
+ 
   
    
+}
+
+.tipOfMenus{
+  text-align: center;
+  
+
+  
 }
 
 .orderTitle{
@@ -83,336 +141,306 @@ html,body{
 
 .squareMenu{
 
-position: absolute;
+
 width: 348px;
 height: 898px;
 background: rgba(255, 154, 3, 0.4);
 border-radius: 20px;
 display: flex;
 justify-content: center;
-left: 5%;
+flex-wrap: wrap;
+align-content: flex-start;
+
+
 }
 
 .squareOrder{
 
-float: right;
+
 width: 348px;
 height: 898px;
-margin-right: 5%;
 background: rgba(255, 154, 3, 0.4);
 border-radius: 20px;
 
-
 }
 
-#identifierBreakfast{
-position: absolute;
-width: 143px;
-height: 40px;
-background: rgba(204, 25, 0, 0.25);
-border-radius: 20px;
-align-self: center;
-font-family: 'Fira Sans', sans-serif;
-align-items: center;
-text-align: center;
-display: flex;
-justify-content: center;
-top: 55px;
+.titleMenuDiv{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
 
+.identifierDiv{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 0%;
+  margin: 0%;
+}
+
+.identifier{
+
+  width: 123px;
+  height: 30px;
+  background: rgba(204, 25, 0, 0.25);
+  border-radius: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 15px;
+  align-items: center;
+  
+  
+  }
+
+.cartDiv{
+  display: flex;
+  justify-content: space-around;
 }
 
 .squaresMenu{
-position: absolute;
-width: 120px;
-height: 86px;
+
+width: 90px;
+height: 76px;
 background: #D9D9D9;
 border-radius: 20px;
+
+
+
+}
+
+.gridProduct{
+
 display: flex;
-
-
+justify-content: space-around;
+ flex-wrap: wrap;
+ row-gap: 10px;
+ column-gap: 0px;
+ margin-top: 2%;
+ margin-bottom: 2%;
+ 
+   
 }
 
 
-#breakfast1{
-
-  left: 10%;
-  top: 15%;
-
-}
-
-#breakfast2{
-
-right: 10%;
-top: 15%;
-
-}
-
-#breakfast3{
-
-top:27%;
-left:10%
-
-}
-
-#breakfast4{
-
-top:27%;
-right:10%
-
-}
-
-
-.menuP{
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 7%;
+.menuP{  
+  
   font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 5%;
   
   
-}
-
-#sandwishP{
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 25%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
 }
 
 
 
 .menuImg{
   align-self: center;
-  margin-left: 37%;
-  margin-bottom:30%;
+  margin-top: 2%;
+  
+}
+
+.hambImg{
+margin-bottom: 0%;
+}
+
+.hambP{
+  margin: 0%;  
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 12px;
+  text-align: center;
 }
 
 .price{
-  position: absolute;
-  margin-top: 53%;
-  margin-left: 43%;
+  
   font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
+  font-size: 12px;  
+  margin-top: 0%
 
 }
 
-#sandWishprice{
-  position: absolute;
-  margin-top: 53%;
-  margin-left: 40%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
+.xtraImg{
+  align-self: center;
+ margin: 0%;
+  width: 50%;
+  height: 50%;
+  
 
 }
 
-#juiceP{
-
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 17%;
+.xtraP{
+  margin: 0%;  
   font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
+  text-align: center;
 
 }
 
-.identifierBreakfast{
-position: absolute;
+
+
+
+/* ----------Order------- */
+
+.clientTable{
+
+  display: flex;
+  align-content: space-between;
+  row-gap: 10px;
+  justify-content: space-around;
+}
+
+.clientAndTable{
+
 width: 143px;
 height: 40px;
 background: rgba(204, 25, 0, 0.25);
 border-radius: 20px;
 align-self: center;
+font-size: 15px;
 font-family: 'Fira Sans', sans-serif;
-align-items: center;
 text-align: center;
-display: flex;
+
+
+}
+
+
+
+#itemPrice{
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  
+}
+
+#squareShopping{
+box-sizing: border-box;
+width: 302px;
+height: 44px;
+background: #FFFDFD;
+border: 1px solid #000000;
 justify-content: center;
-top: 40px;
+align-items: center;
+margin-left:6%;
+display: flex;
+
 }
 
-#identifierHamburguers{
+
+.buttonsShopping{
+  background: #C4C4C4;
+border: 1px solid #000000;
+
+}
+
+.buttonsShopping:hover{
+  background: #958f8f;
+  cursor: pointer;
+
+}
+
+#numOfItems{
+background: #FFFDFD;
+border: 1px solid #000000;
+width: 20px;
+height: 20px;
+text-align: center;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 14px;
+margin-left: 8%;
+margin-right: 8%;
 
 
-  position: absolute;
-  width: 143px;
-  height: 40px;
-  background: rgba(204, 25, 0, 0.25);
-  border-radius: 20px;
-  align-self: center;
-  font-family: 'Fira Sans', sans-serif;
-  align-items: center;
-  text-align: center;
+}
+
+#total{
+width: 127px;
+height: 19px;
+font-family: 'Fira Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+color: #000000;
+margin-top: 140%;
+margin-left: 40%;
+
+}
+
+.ordersButton{
+
+width: 203px;
+height: 40px;
+background: rgba(204, 25, 0, 0.25);
+border-radius: 20px;
+border: none;
+font-family: 'Fira Sans';
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+
+}
+
+.ordersButton:hover{
+  cursor: pointer;
+  background: #df6914;
+
+}
+
+#finalize{
+margin-left: 20%;
+margin-bottom: 5%;
+margin-top: 9%;
+}
+
+#cancel{
+  margin-left: 20%;
+
+}
+
+.delete{
   display: flex;
-  justify-content: center;
-  top: 36%;
-
+  
+  align-content: flex-end;
+ 
+  
+  
+  
 
 }
 
-#hamburguer{
-  left: 10%;
-  top: 44%;
+#deleteThrash{
+  
+  align-self: flex-end;
+  margin: 0%;
+}
+
+#deleteButton{
+  border: none;
+  background: none;
+  margin: 0%;
+  position: relative;
+  align-content: flex-end;
+
+}
+
+#deleteButton:hover{
+  cursor: pointer;
   
 }
 
-#doubleHamburguer{
-  right: 10%;
-  top: 44%;
-  
-}
-#doubleHamImg{
-  align-self: center;
-  margin-left: 39%;
-  margin-bottom:40%;
-
-}
-
-#hamburguerP{
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 15%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-
-}
-
-#doubleHamP{
-
-  position: absolute;
-  margin-top: 30%;
-  margin-left: 5%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  text-align: center;
-}
-
-#hamburguerPrice{
-  position: absolute;
-  margin-top: 55%;
-  margin-left: 40%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
 
 
-}
-
-#DoubleHamprice{
-
-  position: absolute;
-  margin-top: 58%;
-  margin-left: 40%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
 
 
-}
-
-#identifierAccompaniments{
-  width: 165px;
-  height: 40px;
-  background: rgba(204, 25, 0, 0.25);
-  border-radius: 20px;
-  align-self: center;
-  font-family: 'Fira Sans', sans-serif;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  top: 53%;
-  position: absolute;
-
-}
-
-#potatoesP{
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 19%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  text-align: center;
-
-}
-
-#potatoes{
-  left: 10%;
-  top: 61%;
-  
-}
-
-#onion{
-
-  right: 10%;
-  top: 61%;
-  
-}
-
-#identifierDrinks{
-  width: 165px;
-  height: 40px;
-  background: rgba(204, 25, 0, 0.25);
-  border-radius: 20px;
-  align-self: center;
-  font-family: 'Fira Sans', sans-serif;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  bottom: 21%;
-  position: absolute;
-
-}
-
-#water500{
-
-  left: 10%;
-  bottom: 12%;
 
 
-}
 
-#water750{
-
-  right: 10%;
-  bottom: 12%;
-
-
-}
-
-#soda500{
-
-  left: 10%;
-  bottom: 1%;
-
-
-}
-
-#soda750{
-
-  right: 10%;
-  bottom: 1%;
-
-
-}
-
-.waterP{
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 19%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  text-align: center;
-
-}
-
-.sodaP{
-  position: absolute;
-  margin-top: 37%;
-  margin-left: 12%;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  text-align: center;
-  
-}
 
 

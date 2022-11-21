@@ -1,0 +1,97 @@
+{
+    
+    "name":"Menu",
+     "breakfast":[
+        {
+            "item": "Café Americano",
+            "price": "$5.0",
+            "img": "/img/cafe.png"
+        },
+        {
+            "item": "Café con Leche",
+            "price": "$7.0",
+            "img": "/img/coffeemilk.png"
+        },
+        {
+            "item": "Sandwish",
+            "price": "$10.00",
+            "img": "/img/sandwish.png"
+        },
+        {
+            "item": "Jugo Natural",
+            "price": "$7.0",
+            "img": "/img/jugo.png"
+        }
+    ],
+
+    "hamburguers":[
+        
+    
+        {
+            "item": "Hamburguesa simple",
+            "price": "$10.00",
+            "img": "/img/simplehamburguer.png"
+        },
+        {
+            "item": "Hamburguesa doble",
+            "price": "$15.00",
+            "img": "/img/doublehamburguer.png"
+        }
+
+    ],
+
+    "Extras":[
+    
+    
+        {
+            "item": "Queso",
+            "price": "$1.0",
+            "img": "/img/queso.png"
+        },
+        {
+            "item": "Huevo",
+            "price": "$1.0",
+            "img": "/img/huevosn.png"
+        }
+    ],
+
+"Acconpainments":[
+    
+        {
+            "item": "Papas fritas",
+            "price": "$5.0",
+            "img": "/img/friedpotatoes.png"
+        },
+        {
+            "item": "Aros de cebolla",
+            "price": "$5.0"
+            ,"img": "/img/onion.png"
+        }
+
+    ],
+      
+    "Drinks":[
+    
+        {
+            "item": "Agua 500ml",
+            "price": "$1.0",
+            "img": "/img/agua.png"
+        },
+        {
+            "item": "Agua 750ml",
+            "price": "$2.0",
+            "img": "/img/water700.png"
+        },
+        {
+            "item": "Bebida 500ml",
+            "price": "$7.0",
+            "img": "/img/bebida500ml.png"
+        },
+        {
+            "item": "Bebida 750ml",
+            "price": "$10.0",
+            "img": "/img/water700.png"
+        }
+    
+    ]
+}
