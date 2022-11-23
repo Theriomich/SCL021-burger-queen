@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Menu from "../cart.json";
 import { useState } from "react";
 import delete1 from "./img/delete1.png";
+import Swal from "sweetalert2";
 
 function Arrow() {
   return (
@@ -20,6 +21,11 @@ function Arrow() {
 }
 
 export default function Cart() {
+  const meat = {
+    Vacuno: "Vacuno",
+    Pollo: "Pollo",
+    Veggie: "Veggie",
+  };
   return (
     <>
       <header>{Arrow()}</header>
@@ -36,7 +42,13 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.breakfast.map((product) => (
                 <div className="squaresMenu">
-                  <img src={product.img} className="menuImg" alt="Breakfast" />
+                  <button className="itemsButton">
+                    <img
+                      src={product.img}
+                      className="menuImg"
+                      alt="Breakfast"
+                    />
+                  </button>
                   <p className="menuP">{product.item}</p>
                   <p className="price">{product.price}</p>
                 </div>
@@ -49,11 +61,23 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.hamburguers.map((product) => (
                 <div className="squaresMenu">
-                  <img
-                    src={product.img}
-                    className="hambImg"
-                    alt="Hambuerguers"
-                  />
+                  <button
+                    className="itemsButton"
+                    onClick={Swal.fire({
+                      title: "<strong>Tipo de Carne</strong>",
+                      input: "radio",
+                      imageHeight: 100,
+                      imageUrl:
+                        "https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-red-meat-icon-isometric-3d-style-png-image_1821233.jpg",
+                      inputOptions: meat,
+                    })}
+                  >
+                    <img
+                      src={product.img}
+                      className="hambImg"
+                      alt="Hambuerguers"
+                    />
+                  </button>
                   <p className="hambP">{product.item}</p>
                   <p className="price">{product.price}</p>
                 </div>
@@ -66,7 +90,9 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.Extras.map((product) => (
                 <div className="squaresMenu">
-                  <img src={product.img} className="xtraImg" alt="Extras" />
+                  <button className="itemsButton">
+                    <img src={product.img} className="xtraImg" alt="Extras" />
+                  </button>
                   <p className="xtraP">{product.item}</p>
                   <p className="price">{product.price}</p>
                 </div>
@@ -79,7 +105,13 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.Acconpainments.map((product) => (
                 <div className="squaresMenu">
-                  <img src={product.img} className="menuImg" alt="Breakfast" />
+                  <button className="itemsButton">
+                    <img
+                      src={product.img}
+                      className="menuImg"
+                      alt="Aconpainments"
+                    />
+                  </button>
                   <p className="menuP">{product.item}</p>
                   <p className="price">{product.price}</p>
                 </div>
@@ -92,7 +124,9 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.Drinks.map((product) => (
                 <div className="squaresMenu">
-                  <img src={product.img} className="menuImg" alt="Breakfast" />
+                  <button className="itemsButton">
+                    <img src={product.img} className="menuImg" alt="Drinks" />
+                  </button>
                   <p className="menuP">{product.item}</p>
                   <p className="price">{product.price}</p>
                 </div>
@@ -137,19 +171,29 @@ export default function Cart() {
 }
 
 function Shopping() {
-  const [numItem, setState] = useState(0);
+  const [cartProduct, setCartProducts] = useState([]);
+
+  const [count, setCount] = useState(0);
+  function countMore() {
+    setCount(count + 1);
+  }
+
+  function countLess() {
+    setCount(count - 1);
+  }
+
+  const [appear, setAppear] = useState(0);
+  function bar() {
+    setAppear(appear);
+  }
   return (
     <>
       <div id="squareShopping">
-        <button id="less" className="buttonsShopping">
+        <button id="less" className="buttonsShopping" onClick={countLess}>
           -
         </button>
-        <p id="numOfItems">0</p>
-        <button
-          id="more"
-          className="buttonsShopping"
-          onClick={() => NumItems++}
-        >
+        <p id="numOfItems">{count}</p>
+        <button id="more" className="buttonsShopping" onClick={countMore}>
           +
         </button>
         <div className="delete">
@@ -160,14 +204,6 @@ function Shopping() {
       </div>
     </>
   );
-}
-
-const Item = () => {
-  return <shopping />;
-};
-
-function NumItems() {
-  return <p id="numOfItems">0</p>;
 }
 
 function Items() {
