@@ -163,6 +163,7 @@ height: 898px;
 background: rgba(255, 154, 3, 0.4);
 border-radius: 20px;
 
+
 }
 
 .titleMenuDiv{
@@ -326,26 +327,39 @@ text-align: center;
 
 
 
-#itemPrice{
+#item_Price{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: 'Fira Sans', sans-serif;
   font-weight: 700;
+
   
+}
+
+#item{
+margin-left: 10%;
+}
+
+#cost{
+  margin-right: 20%;
 }
 
 #squareShopping{
 box-sizing: border-box;
 width: 302px;
-height: 44px;
+height: 55px;
 background: #FFFDFD;
 border: 1px solid #000000;
-justify-content: center;
+justify-content: space-between;
 align-items: center;
-margin-left:6%;
+margin-left:8%;
 display: flex;
+margin-bottom: 5%;
+
+
 
 }
+
 
 
 .buttonsShopping{
@@ -368,8 +382,7 @@ height: 20px;
 text-align: center;
 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 font-size: 14px;
-margin-left: 8%;
-margin-right: 8%;
+
 
 
 }
@@ -409,6 +422,15 @@ line-height: 19px;
 
 }
 
+  
+#ordering{
+display: block;
+align-items: flex-end;
+
+
+
+}
+
 #finalize{
 margin-left: 20%;
 margin-bottom: 5%;
@@ -423,10 +445,6 @@ margin-top: 9%;
 .delete{
   display: flex;  
   align-content: flex-end;
- 
-  
-  
-  
 
 }
 
@@ -447,10 +465,43 @@ margin-top: 9%;
 
 #deleteButton:hover{
   cursor: pointer;
+ 
+}
+
+#less{
+  margin: 0%;
   
 }
 
+#itemItem{
+ max-width: 40px;
+ margin-top: 10%;
+ margin-bottom: 10%;
+  text-align: center;
+ align-content: center;
+ margin-right: 10%;
+}
 
+#itemPrice{
+  max-width: 5px;
+  margin-right: 5%;
+
+}
+
+.itemAndPrice{
+  font-family: 'Fira Sans';
+  font-size: 14px;
+  margin: 0%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#allShopping{
+display: block;
+justify-content: space-between;
+align-items: center;
+vertical-align: middle;
+}
 
 
 

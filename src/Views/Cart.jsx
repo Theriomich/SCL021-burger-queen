@@ -26,6 +26,8 @@ export default function Cart() {
     Pollo: "Pollo",
     Veggie: "Veggie",
   };
+  const [order, setOrder] = useState([]);
+
   return (
     <>
       <header>{Arrow()}</header>
@@ -42,7 +44,12 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.breakfast.map((product) => (
                 <div className="squaresMenu">
-                  <button className="itemsButton">
+                  <button
+                    className="itemsButton"
+                    onClick={() => {
+                      setOrder([...order, product]);
+                    }}
+                  >
                     <img
                       src={product.img}
                       className="menuImg"
@@ -63,14 +70,18 @@ export default function Cart() {
                 <div className="squaresMenu">
                   <button
                     className="itemsButton"
-                    onClick={Swal.fire({
-                      title: "<strong>Tipo de Carne</strong>",
-                      input: "radio",
-                      imageHeight: 100,
-                      imageUrl:
-                        "https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-red-meat-icon-isometric-3d-style-png-image_1821233.jpg",
-                      inputOptions: meat,
-                    })}
+                    onClick={() =>
+                      Swal.fire({
+                        title: "<strong>Tipo de Carne</strong>",
+                        input: "radio",
+                        imageHeight: 100,
+                        imageUrl:
+                          "https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-red-meat-icon-isometric-3d-style-png-image_1821233.jpg",
+                        inputOptions: meat,
+                      }).then((product) => {
+                        setOrder([...order, product]);
+                      })
+                    }
                   >
                     <img
                       src={product.img}
@@ -90,7 +101,12 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.Extras.map((product) => (
                 <div className="squaresMenu">
-                  <button className="itemsButton">
+                  <button
+                    className="itemsButton"
+                    onClick={() => {
+                      setOrder([...order, product]);
+                    }}
+                  >
                     <img src={product.img} className="xtraImg" alt="Extras" />
                   </button>
                   <p className="xtraP">{product.item}</p>
@@ -105,7 +121,12 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.Acconpainments.map((product) => (
                 <div className="squaresMenu">
-                  <button className="itemsButton">
+                  <button
+                    className="itemsButton"
+                    onClick={() => {
+                      setOrder([...order, product]);
+                    }}
+                  >
                     <img
                       src={product.img}
                       className="menuImg"
@@ -124,7 +145,12 @@ export default function Cart() {
             <div className="gridProduct">
               {Menu.Drinks.map((product) => (
                 <div className="squaresMenu">
-                  <button className="itemsButton">
+                  <button
+                    className="itemsButton"
+                    onClick={() => {
+                      setOrder([...order, product]);
+                    }}
+                  >
                     <img src={product.img} className="menuImg" alt="Drinks" />
                   </button>
                   <p className="menuP">{product.item}</p>
@@ -150,11 +176,11 @@ export default function Cart() {
             />
           </div>
 
-          <div id="itemPrice">
+          <div id="item_Price">
             <p id="item">Item</p>
             <p id="cost">$</p>
           </div>
-          <Shopping />
+          <Shopping order={order} />
           <div id="ordering">
             <p id="total">Sub-Total:</p>
             <button className="ordersButton" id="finalize">
@@ -170,46 +196,45 @@ export default function Cart() {
   );
 }
 
-function Shopping() {
-  const [cartProduct, setCartProducts] = useState([]);
-
-  const [count, setCount] = useState(0);
+function Shopping({ order }) {
+  const [count, setCount] = useState(1);
   function countMore() {
     setCount(count + 1);
   }
 
   function countLess() {
     setCount(count - 1);
+    // if (count==0) return {[]}
+    // else return {count-1}
   }
 
-  const [appear, setAppear] = useState(0);
-  function bar() {
-    setAppear(appear);
-  }
   return (
     <>
-      <div id="squareShopping">
-        <button id="less" className="buttonsShopping" onClick={countLess}>
-          -
-        </button>
-        <p id="numOfItems">{count}</p>
-        <button id="more" className="buttonsShopping" onClick={countMore}>
-          +
-        </button>
-        <div className="delete">
-          <button id="deleteButton">
-            <img src={delete1} id="deleteThrash" alt="deleteitem" />
-          </button>
-        </div>
+      <div id="allShopping">
+        {order.map((item) => (
+          <div id="squareShopping">
+            <div id="itemItem" className="itemAndPrice">
+              {item.item}
+            </div>
+
+            <button id="less" className="buttonsShopping" onClick={countLess}>
+              -
+            </button>
+            <p id="numOfItems">{count}</p>
+            <button id="more" className="buttonsShopping" onClick={countMore}>
+              +
+            </button>
+            <div id="itemPrice" className="itemAndPrice">
+              {item.price}
+            </div>
+            <div className="delete">
+              <button id="deleteButton">
+                <img src={delete1} id="deleteThrash" alt="deleteitem" />
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
-}
-
-function Items() {
-  {
-    Menu.map((item, index) => {
-      return <shopping lala={item.item} />;
-    });
-  }
 }
