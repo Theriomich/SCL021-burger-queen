@@ -4,22 +4,22 @@
      "breakfast":[
         {
             "item": "Café Americano",
-            "price": "$5.0",
+            "price": 3000,
             "img": "/img/cafe.png"
         },
         {
             "item": "Café con Leche",
-            "price": "$7.0",
+            "price": 4000,
             "img": "/img/coffeemilk.png"
         },
         {
             "item": "Sandwish",
-            "price": "$10.00",
+            "price": 5000,
             "img": "/img/sandwish.png"
         },
         {
             "item": "Jugo Natural",
-            "price": "$7.0",
+            "price": 3500,
             "img": "/img/jugo.png"
         }
     ],
@@ -29,12 +29,12 @@
     
         {
             "item": "Hamburguesa simple",
-            "price": "$10.00",
+            "price": 5000,
             "img": "/img/simplehamburguer.png"
         },
         {
             "item": "Hamburguesa doble",
-            "price": "$15.00",
+            "price": 6000,
             "img": "/img/doublehamburguer.png"
         }
 
@@ -45,12 +45,12 @@
     
         {
             "item": "Queso",
-            "price": "$1.0",
+            "price": 1000,
             "img": "/img/queso.png"
         },
         {
             "item": "Huevo",
-            "price": "$1.0",
+            "price": 1000,
             "img": "/img/huevosn.png"
         }
     ],
@@ -59,12 +59,12 @@
     
         {
             "item": "Papas fritas",
-            "price": "$5.0",
+            "price": 3500,
             "img": "/img/friedpotatoes.png"
         },
         {
             "item": "Aros de cebolla",
-            "price": "$5.0"
+            "price": 3000
             ,"img": "/img/onion.png"
         }
 
@@ -74,22 +74,22 @@
     
         {
             "item": "Agua 500ml",
-            "price": "$1.0",
+            "price": 500,
             "img": "/img/agua.png"
         },
         {
             "item": "Agua 750ml",
-            "price": "$2.0",
+            "price": 1000,
             "img": "/img/water700.png"
         },
         {
             "item": "Bebida 500ml",
-            "price": "$7.0",
+            "price": 1500,
             "img": "/img/bebida500ml.png"
         },
         {
             "item": "Bebida 750ml",
-            "price": "$10.0",
+            "price": 2000,
             "img": "/img/water700.png"
         }
     

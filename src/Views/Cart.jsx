@@ -20,13 +20,20 @@ function Arrow() {
   );
 }
 
-export default function Cart() {
+export default function Cart({ count }) {
   const meat = {
     Vacuno: "Vacuno",
     Pollo: "Pollo",
     Veggie: "Veggie",
   };
+
   const [order, setOrder] = useState([]);
+  const prices = order.map((price) => price.price);
+  let sum = 0;
+  const sumPrices = prices.forEach((prices) => (sum = sum + prices));
+  //Cuando al contador se le sume 1 se debe multiplicar
+  //Si el contador esta en 1 no hacer nada si el contador se le suma +1 hacer una multiplicacion
+  //
 
   return (
     <>
@@ -79,7 +86,9 @@ export default function Cart() {
                           "https://png.pngtree.com/png-vector/20191018/ourlarge/pngtree-red-meat-icon-isometric-3d-style-png-image_1821233.jpg",
                         inputOptions: meat,
                       }).then((product) => {
-                        setOrder([...order, product]);
+                        Menu.hamburguers.map((product) =>
+                          setOrder([...order, product])
+                        );
                       })
                     }
                   >
@@ -104,6 +113,8 @@ export default function Cart() {
                   <button
                     className="itemsButton"
                     onClick={() => {
+                      {
+                      }
                       setOrder([...order, product]);
                     }}
                   >
@@ -182,11 +193,33 @@ export default function Cart() {
           </div>
           <Shopping order={order} />
           <div id="ordering">
-            <p id="total">Sub-Total:</p>
+            <p id="total">Sub-Total:${sum}</p>
             <button className="ordersButton" id="finalize">
               Finalizar Pedido
             </button>
-            <button className="ordersButton" id="cancel">
+            <button
+              className="ordersButton"
+              id="cancel"
+              onClick={() =>
+                Swal.fire({
+                  title: "¿Seguro que desea cancelar el pedido?",
+                  text: "¡No se puede revertir!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "¡Si, borrar!",
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    Swal.fire(
+                      "¡Borrado!",
+                      "Su pedido ha sido cancelado.",
+                      "success"
+                    );
+                  }
+                })
+              }
+            >
               Cancelar Pedido
             </button>
           </div>
@@ -198,15 +231,20 @@ export default function Cart() {
 
 function Shopping({ order }) {
   const [count, setCount] = useState(1);
+
   function countMore() {
     setCount(count + 1);
   }
 
   function countLess() {
     setCount(count - 1);
-    // if (count==0) return {[]}
-    // else return {count-1}
   }
+
+  // function deleteItem() {
+  //   Shopping.map((items) => {
+  //     items.removeChild(Shopping);
+  //   });
+  // }
 
   return (
     <>
@@ -229,7 +267,14 @@ function Shopping({ order }) {
             </div>
             <div className="delete">
               <button id="deleteButton">
-                <img src={delete1} id="deleteThrash" alt="deleteitem" />
+                <img
+                  src={delete1}
+                  id="deleteThrash"
+                  alt="deleteitem"
+                  onClick={order.forEach((items) => {
+                    return "lala";
+                  })}
+                />
               </button>
             </div>
           </div>
