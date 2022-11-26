@@ -20,7 +20,7 @@ function Arrow() {
   );
 }
 
-export default function Cart({ count }) {
+export default function Cart() {
   const meat = {
     Vacuno: "Vacuno",
     Pollo: "Pollo",
@@ -31,6 +31,7 @@ export default function Cart({ count }) {
   const prices = order.map((price) => price.price);
   let sum = 0;
   const sumPrices = prices.forEach((prices) => (sum = sum + prices));
+
   //Cuando al contador se le sume 1 se debe multiplicar
   //Si el contador esta en 1 no hacer nada si el contador se le suma +1 hacer una multiplicacion
   //
@@ -239,11 +240,26 @@ function Shopping({ order }) {
   function countLess() {
     setCount(count - 1);
   }
+  // const item = Menu;
+  //función para pasar a img onClick y elimine el item correspondiente(index) de setPedido
+  //traer pedido y setPedido en props
 
-  // function deleteItem() {
-  //   Shopping.map((items) => {
-  //     items.removeChild(Shopping);
-  //   });
+  // const deleteItem = () => {
+  //   const pedidoFiltered = order.filter((element) => element.id !== item.id);
+  //   setProduct(pedidoFiltered);
+  // };
+
+  // function deleteItem(Shopping) {
+  //   const shoppings = order.find((shop) => shop.order === Shopping);
+  //   const index = order.indexOf(shoppings);
+  //   order.splice(index, 1);
+  //   actualShopping();
+  // }
+
+  // function emptyOrder(products) {
+  //   setProduct(
+  //     product.filter((productItems) => productItems.products !== products)
+  //   );
   // }
 
   return (
@@ -267,14 +283,7 @@ function Shopping({ order }) {
             </div>
             <div className="delete">
               <button id="deleteButton">
-                <img
-                  src={delete1}
-                  id="deleteThrash"
-                  alt="deleteitem"
-                  onClick={order.forEach((items) => {
-                    return "lala";
-                  })}
-                />
+                <img src={delete1} id="deleteThrash" alt="deleteitem" />
               </button>
             </div>
           </div>
