@@ -32,6 +32,11 @@ export default function Cart() {
   let sum = 0;
   const sumPrices = prices.forEach((prices) => (sum = sum + prices));
 
+  // const deleteItem = (id) => {
+  //   const pedidoFiltered = order.filter((element) => element.id !== element.id);
+  //   setOrder(pedidoFiltered);
+  // };
+
   //Cuando al contador se le sume 1 se debe multiplicar
   //Si el contador esta en 1 no hacer nada si el contador se le suma +1 hacer una multiplicacion
   //
@@ -212,6 +217,10 @@ export default function Cart() {
                   confirmButtonText: "¡Si, borrar!",
                 }).then((result) => {
                   if (result.isConfirmed) {
+                    // const pedidoFiltered = result.filter(
+                    //   (element) => element.id !== element.id
+                    // );
+                    // setOrder(pedidoFiltered);
                     Swal.fire(
                       "¡Borrado!",
                       "Su pedido ha sido cancelado.",
@@ -228,67 +237,53 @@ export default function Cart() {
       </div>
     </>
   );
-}
 
-function Shopping({ order }) {
-  const [count, setCount] = useState(1);
+  function Shopping({ order }) {
+    const [count, setCount] = useState(1);
 
-  function countMore() {
-    setCount(count + 1);
-  }
+    function countMore() {
+      setCount(count + 1);
+    }
 
-  function countLess() {
-    setCount(count - 1);
-  }
-  // const item = Menu;
-  //función para pasar a img onClick y elimine el item correspondiente(index) de setPedido
-  //traer pedido y setPedido en props
+    function countLess() {
+      setCount(count - 1);
+    }
 
-  // const deleteItem = () => {
-  //   const pedidoFiltered = order.filter((element) => element.id !== item.id);
-  //   setProduct(pedidoFiltered);
-  // };
+    function deleteItem(id) {
+      console.log(id);
+      const pedidoFiltered = order.filter((element) => element.id !== id);
+      setOrder(pedidoFiltered);
+      console.log(pedidoFiltered);
+    }
 
-  // function deleteItem(Shopping) {
-  //   const shoppings = order.find((shop) => shop.order === Shopping);
-  //   const index = order.indexOf(shoppings);
-  //   order.splice(index, 1);
-  //   actualShopping();
-  // }
+    return (
+      <>
+        <div id="allShopping">
+          {order.map((item) => (
+            <div id="squareShopping">
+              <div id="itemItem" className="itemAndPrice">
+                {item.item}
+              </div>
 
-  // function emptyOrder(products) {
-  //   setProduct(
-  //     product.filter((productItems) => productItems.products !== products)
-  //   );
-  // }
-
-  return (
-    <>
-      <div id="allShopping">
-        {order.map((item) => (
-          <div id="squareShopping">
-            <div id="itemItem" className="itemAndPrice">
-              {item.item}
-            </div>
-
-            <button id="less" className="buttonsShopping" onClick={countLess}>
-              -
-            </button>
-            <p id="numOfItems">{count}</p>
-            <button id="more" className="buttonsShopping" onClick={countMore}>
-              +
-            </button>
-            <div id="itemPrice" className="itemAndPrice">
-              {item.price}
-            </div>
-            <div className="delete">
-              <button id="deleteButton">
-                <img src={delete1} id="deleteThrash" alt="deleteitem" />
+              <button id="less" className="buttonsShopping" onClick={countLess}>
+                -
               </button>
+              <p id="numOfItems">{count}</p>
+              <button id="more" className="buttonsShopping" onClick={countMore}>
+                +
+              </button>
+              <div id="itemPrice" className="itemAndPrice">
+                {item.price}
+              </div>
+              <div className="delete">
+                <button id="deleteButton" onClick={deleteItem}>
+                  <img src={delete1} id="deleteThrash" alt="deleteitem" />
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </>
-  );
+          ))}
+        </div>
+      </>
+    );
+  }
 }

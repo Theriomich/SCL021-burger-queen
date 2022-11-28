@@ -363,6 +363,7 @@ margin-bottom: 5%;
 
 
 
+
 }
 
 
@@ -401,7 +402,7 @@ font-weight: 700;
 font-size: 16px;
 line-height: 19px;
 color: #000000;
-margin-top: 140%;
+margin-top: 160%;
 margin-left: 30%;
 
 }
@@ -432,9 +433,8 @@ line-height: 19px;
 #ordering{
 display: block;
 align-items: flex-end;
-position: static;
 top: 85%;
-position: absolute;
+
 
 
 }
@@ -442,13 +442,12 @@ position: absolute;
 #finalize{
 margin-left: 20%;
 margin-bottom: 5%;
-margin-top: 4%;
+margin-top: 2%;
 }
 
 #cancel{
   margin-left: 20%;
-  position: sticky;
-
+  
 
 }
 
@@ -504,13 +503,32 @@ margin-top: 4%;
   margin: 0%;
   margin-top: 10%;
   margin-bottom: 10%;
+  
 }
 
 #allShopping{
 display: block;
 justify-content: space-between;
 align-items: center;
-position: relative
+position: absolute;
+overflow: scroll;
+height: 100vh;
+width: 32%;
+
+
+}
+
+#allShopping::-webkit-scrollbar{
+width: 10px;
+border-radius: 15px;
+background: rgba(204, 25, 0, 0.25);
+}
+
+#allShopping::-webkit-scrollbar-thumb{
+  background: #df6914;
+  border-radius: 18px;
+  border-right: 2px solid #df6914;
+    
 }
 
 
