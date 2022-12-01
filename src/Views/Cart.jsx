@@ -28,6 +28,8 @@ export default function Cart() {
   };
 
   const [order, setOrder] = useState([]);
+  const [count, setCount] = useState(1);
+
   const prices = order.map((price) => price.price);
   let sum = 0;
   const sumPrices = prices.forEach((prices) => (sum = sum + prices));
@@ -55,8 +57,8 @@ export default function Cart() {
               <h3 className="identifier">Desayuno</h3>
             </div>
             <div className="gridProduct">
-              {Menu.breakfast.map((product) => (
-                <div className="squaresMenu">
+              {Menu.breakfast.map((product, index) => (
+                <div className="squaresMenu" Key={index}>
                   <button
                     className="itemsButton"
                     onClick={() => {
@@ -79,8 +81,8 @@ export default function Cart() {
               <h3 className="identifier">Hamburguesas</h3>
             </div>
             <div className="gridProduct">
-              {Menu.hamburguers.map((product) => (
-                <div className="squaresMenu">
+              {Menu.hamburguers.map((product, index) => (
+                <div className="squaresMenu" key={index}>
                   <button
                     className="itemsButton"
                     onClick={() =>
@@ -114,13 +116,11 @@ export default function Cart() {
               <h3 className="identifier">Extras</h3>
             </div>
             <div className="gridProduct">
-              {Menu.Extras.map((product) => (
-                <div className="squaresMenu">
+              {Menu.Extras.map((product, index) => (
+                <div className="squaresMenu" key={index}>
                   <button
                     className="itemsButton"
                     onClick={() => {
-                      {
-                      }
                       setOrder([...order, product]);
                     }}
                   >
@@ -136,8 +136,8 @@ export default function Cart() {
               <h3 className="identifier">Acompañamientos</h3>
             </div>
             <div className="gridProduct">
-              {Menu.Acconpainments.map((product) => (
-                <div className="squaresMenu">
+              {Menu.Acconpainments.map((product, index) => (
+                <div className="squaresMenu" key={index}>
                   <button
                     className="itemsButton"
                     onClick={() => {
@@ -160,8 +160,8 @@ export default function Cart() {
               <h3 className="identifier">Bebidas</h3>
             </div>
             <div className="gridProduct">
-              {Menu.Drinks.map((product) => (
-                <div className="squaresMenu">
+              {Menu.Drinks.map((product, index) => (
+                <div className="squaresMenu" key={index}>
                   <button
                     className="itemsButton"
                     onClick={() => {
@@ -217,10 +217,10 @@ export default function Cart() {
                   confirmButtonText: "¡Si, borrar!",
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    // const pedidoFiltered = result.filter(
-                    //   (element) => element.id !== element.id
-                    // );
-                    // setOrder(pedidoFiltered);
+                    const pedidoFiltered = result.filter(
+                      (element) => element.id !== element.id
+                    );
+                    setOrder(pedidoFiltered);
                     Swal.fire(
                       "¡Borrado!",
                       "Su pedido ha sido cancelado.",
@@ -237,46 +237,78 @@ export default function Cart() {
       </div>
     </>
   );
+  function countMore() {
+    setCount(count + 1);
+  }
+
+  function countless() {
+    setCount(count - 1);
+  }
 
   function Shopping({ order }) {
-    const [count, setCount] = useState(1);
+    function deleteItem(product) {
+      console.log(product);
+      const orderFiltered = order.filter((element) => element.id !== product);
 
-    function countMore() {
-      setCount(count + 1);
+      setOrder(orderFiltered);
     }
 
-    function countLess() {
-      setCount(count - 1);
-    }
+    // function countLess(product) {
+    //   const restCount = order.map((element) => {
+    //     if (element.id == product.id) {
+    //       return product.count - 1;
+    //     } else {
+    //       return product;
+    //     }
+    //   });
+    //   setCount(restCount);
+    // }
 
-    function deleteItem(id) {
-      console.log(id);
-      const pedidoFiltered = order.filter((element) => element.id !== id);
-      setOrder(pedidoFiltered);
-      console.log(pedidoFiltered);
-    }
+    const addToCart = (object) => {
+      if (!order.includes(object)) {
+        setOrder([...order, object]);
+      } else {
+        let f = order.map((items) => {
+          if (items.id == object.id) {
+            return { ...items, cuantity: items.cuantity + 1 };
+          }
+          return items;
+        });
+
+        setOrder(f);
+      }
+    };
 
     return (
       <>
         <div id="allShopping">
-          {order.map((item) => (
-            <div id="squareShopping">
+          {order.map((item, index) => (
+            <div id="squareShopping" key={index}>
               <div id="itemItem" className="itemAndPrice">
                 {item.item}
               </div>
 
-              <button id="less" className="buttonsShopping" onClick={countLess}>
+              <button
+                id="less"
+                className="buttonsShopping"
+                onClick={() => countless(item.id)}
+                disabled={count <= 1}
+              >
                 -
               </button>
               <p id="numOfItems">{count}</p>
-              <button id="more" className="buttonsShopping" onClick={countMore}>
+              <button
+                id="more"
+                className="buttonsShopping"
+                onClick={() => countMore(item.id)}
+              >
                 +
               </button>
               <div id="itemPrice" className="itemAndPrice">
                 {item.price}
               </div>
               <div className="delete">
-                <button id="deleteButton" onClick={deleteItem}>
+                <button id="deleteButton" onClick={() => deleteItem(item.id)}>
                   <img src={delete1} id="deleteThrash" alt="deleteitem" />
                 </button>
               </div>

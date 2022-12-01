@@ -6,26 +6,30 @@
             "id":1,
             "item": "Café Americano",
             "price": 3000,
-            "img": "/img/cafe.png"
+            "img": "/img/cafe.png",
+            "cuantity":1
         },
         {
 
             "id":2,
             "item": "Café con Leche",
             "price": 4000,
-            "img": "/img/coffeemilk.png"
+            "img": "/img/coffeemilk.png",
+            "cuantity":1
         },
         {
             "id":3,
             "item": "Sandwish",
             "price": 5000,
-            "img": "/img/sandwish.png"
+            "img": "/img/sandwish.png",
+            "cuantity":1
         },
         {
             "id":4,
             "item": "Jugo Natural",
             "price": 3500,
-            "img": "/img/jugo.png"
+            "img": "/img/jugo.png",
+            "cuantity":1
         }
     ],
 
@@ -36,13 +40,15 @@
             "id":5,
             "item": "Hamburguesa simple",
             "price": 5000,
-            "img": "/img/simplehamburguer.png"
+            "img": "/img/simplehamburguer.png",
+            "cuantity":1
         },
         {
             "id":6,
             "item": "Hamburguesa doble",
             "price": 6000,
-            "img": "/img/doublehamburguer.png"
+            "img": "/img/doublehamburguer.png",
+            "cuantity":1
         }
 
     ],
@@ -54,13 +60,15 @@
             "id":7,
             "item": "Queso",
             "price": 1000,
-            "img": "/img/queso.png"
+            "img": "/img/queso.png",
+            "cuantity":1
         },
         {
             "id":8,
             "item": "Huevo",
             "price": 1000,
-            "img": "/img/huevosn.png"
+            "img": "/img/huevosn.png",
+            "cuantity":1
         }
     ],
 
@@ -70,13 +78,15 @@
             "id":9,
             "item": "Papas fritas",
             "price": 3500,
-            "img": "/img/friedpotatoes.png"
+            "img": "/img/friedpotatoes.png",
+            "cuantity":1
         },
         {
             "id":10,
             "item": "Aros de cebolla",
             "price": 3000
-            ,"img": "/img/onion.png"
+            ,"img": "/img/onion.png",
+            "cuantity":1
         }
 
     ],
@@ -87,25 +97,29 @@
             "id":11,
             "item": "Agua 500ml",
             "price": 500,
-            "img": "/img/agua.png"
+            "img": "/img/agua.png",
+            "cuantity":1
         },
         {
             "id":12,
             "item": "Agua 750ml",
             "price": 1000,
-            "img": "/img/water700.png"
+            "img": "/img/water700.png",
+            "cuantity":1
         },
         {
             "id":13,
             "item": "Bebida 500ml",
             "price": 1500,
-            "img": "/img/bebida500ml.png"
+            "img": "/img/bebida500ml.png",
+            "cuantity":1
         },
         {
             "id":14,
             "item": "Bebida 750ml",
             "price": 2000,
-            "img": "/img/water700.png"
+            "img": "/img/water700.png",
+            "cuantity":1
         }
     
     ]
